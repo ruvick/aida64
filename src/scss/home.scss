@@ -29,7 +29,10 @@
 .descp-banner {
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
+	// align-items: flex-start;
+	@media (max-width: em(515)){
+		 text-align: center; 
+	}
 	&__title {
 		@include adaptiveValue("font-size", 98, 36);
 		font-weight: 800;
@@ -246,7 +249,6 @@
 	backdrop-filter: blur(rem(12));
 	overflow: hidden;
 	&__icon {
-		width: 60px;
 		@include adaptiveValue("width", 60, 30);
 		@include adaptiveValue("height", 60, 30);
 		img {
