@@ -14,7 +14,7 @@
 	}
 
 	&__descp {
-		max-width: rem(500);
+		max-width: rem(465);
 		width: 100%;
 		@media (max-width: em(540)){
 			  &:not(:last-child){
@@ -73,6 +73,7 @@
 		font-weight: 700;
 		line-height: math.div(32, 24);
 		color: #fff;
+		width: 100%;
 		background-color: #CC000E;
 		svg {
 			flex: 0 0 rem(24);
@@ -143,7 +144,7 @@
 
 	&__inner {
 		display: grid; 
-		grid-template-columns: repeat(auto-fit, minmax(rem(350), 1fr)); 
+		grid-template-columns: repeat(auto-fit, minmax(rem(450), 1fr)); 
 		align-items: center;
 		@include adaptiveValue("gap", 100, 25);
 		@media (max-width: em(540)){
@@ -152,8 +153,10 @@
 	}
 
 	&__video-ibg {
+		// mask: url('../img/mask.svg') no-repeat center / 100% 100%;
 		padding-bottom: 50%;
 		overflow: hidden;
+		clip-path: polygon(100% 0%, 86% 0%, 100% 25%, 100% 90%, 100% 100%, 13% 100%, 0% 75%, 0% 0%);
 	}
 
 	&__descp {
@@ -165,7 +168,6 @@
 		@include adaptiveValue("font-size", 24, 16);
 		font-weight: 700;
 		line-height: math.div(32, 24);
-		line-height: 32px;
 		&::before{
 			content:''; 
 			float: left; 
