@@ -1,3 +1,127 @@
-//====================================================================================================
+.banner {
+	background-size: cover !important;
+	&__container {
+	}
 
-//====================================================================================================
+	&__inner {
+		display: grid; 
+		grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr)); 
+		align-items: center;
+		@include adaptiveValue("gap", 35, 10);
+		@media (max-width: em(540)){
+			grid-template-columns: 1fr; 
+		}
+	}
+
+	&__descp {
+		max-width: rem(500);
+		width: 100%;
+		@media (max-width: em(540)){
+			  &:not(:last-child){
+					margin-bottom: rem(10);
+				}
+		}
+	}
+
+	&__image {
+	}
+}
+.descp-banner {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	&__title {
+		@include adaptiveValue("font-size", 98, 26);
+		font-weight: 800;
+		line-height: math.div(104, 98);
+		letter-spacing: rem(0.20000000298023224);
+		&:not(:last-child){
+			// @include adaptiveValue("margin-bottom", 16, 10);
+			margin-bottom: em(16, 98);
+		}
+	}
+
+	&__subtitle {
+		@include adaptiveValue("font-size", 36, 16);
+		font-weight: 500;
+		line-height: math.div(40, 36);
+		letter-spacing: rem(0.20000000298023224);
+		&:not(:last-child){
+			margin-bottom: em(36, 36);
+		}
+	}
+
+	&__text {
+		@include adaptiveValue("font-size", 26, 16);
+		font-weight: 400;
+		line-height: math.div(32, 26);
+		color: #b494b3;
+		&:not(:last-child){
+			margin-bottom: em(36, 26);
+		}
+	}
+
+	&__actions {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+	}
+
+	&__btn {
+		@include adaptiveValue("font-size", 24, 14);
+		font-weight: 700;
+		line-height: math.div(32, 24);
+		color: #fff;
+		background-color: #CC000E;
+		svg {
+			flex: 0 0 rem(24);
+			width: rem(24);
+			height: rem(24);
+				margin-right: rem(8);
+		}
+		&:not(:last-child){
+			margin-bottom: rem(16);
+		}
+		@media (max-width: em(414)){
+			  width: 100%;
+		}
+	}
+
+	&__footnote {
+		max-width: rem(458);
+		width: 100%;
+		@include adaptiveValue("font-size", 14, 10);
+		font-weight: 400;
+		line-height: math.div(20, 14);
+		color: #8c7194;
+		text-align: center;
+	}
+}
+
+.image-banner {
+	
+	&__text {
+		@include adaptiveValue("font-size", 22, 16);
+		font-weight: 900;
+		line-height: math.div(48, 22);
+		letter-spacing: 0.03em;
+		color: #d7afbc;
+		text-align: right;
+		@media (max-width: em(540)){
+			  text-align: center;
+		}
+	}
+
+	&__img-ibg {
+		position: relative;
+		padding-bottom: 120%;
+		overflow: hidden;
+		img {
+			top: rem(-50);
+			@media (max-width: em(768)){
+				  top: 0;
+			}
+		}
+	}
+}
