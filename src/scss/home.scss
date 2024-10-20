@@ -31,7 +31,7 @@
 	flex-direction: column;
 	align-items: flex-start;
 	&__title {
-		@include adaptiveValue("font-size", 98, 26);
+		@include adaptiveValue("font-size", 98, 36);
 		font-weight: 800;
 		line-height: math.div(104, 98);
 		letter-spacing: rem(0.20000000298023224);
@@ -92,7 +92,7 @@
 	&__footnote {
 		max-width: rem(458);
 		width: 100%;
-		@include adaptiveValue("font-size", 14, 10);
+		@include adaptiveValue("font-size", 14, 12);
 		font-weight: 400;
 		line-height: math.div(20, 14);
 		color: #8c7194;
