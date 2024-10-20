@@ -1,10 +1,123 @@
 //====================================================================================================
+.header {
+	position: relative;
+	z-index: 3;
+	@include adaptiveValue("padding-top", 12, 6);
+	@include adaptiveValue("padding-bottom", 12, 6);
+	background-color: $darkColor;
+	&__wrapper {
+	}
+
+	&__container {
+		display: flex;
+		align-items: center;
+		gap: rem(10);
+	}
+
+	&__logo {
+		@include adaptiveValue("width", 126, 90);
+		// flex: 0 0 rem(126);
+		height: auto;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__actions {
+		display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    justify-content: flex-end;
+	}
+}
+.logo-icon {
+	overflow: hidden; 
+}
+.menu {
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		align-items: center;
+		@media (max-width: em(768)){
+			  flex-direction: column;
+				align-items: flex-start;
+				justify-content: start;
+		}
+	}
+
+	&__item {
+			@include adaptiveValue("margin-left", 40, 10);
+			@media (max-width: em(768)){
+				  margin: 0 0 rem(10) 0;
+			}
+	}
+
+	&__link {
+		@include adaptiveValue("font-size", 16, 14);
+		font-weight: 700;
+		line-height: math.div(22, 16);
+		padding: rem(2);
+		transition: $mainTransition;
+		@media (any-hover: hover) {
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+		@media (max-width: em(768)){
+			  color: $darkColor;
+		}
+	}
+}
+.actions-header {
+	&__menu {
+		&:not(:last-child){
+			@include adaptiveValue("margin-right", 32, 15);
+		}
+		@media (max-width: em(768)){
+			  position: fixed;
+			  top: rem(65);
+			  left: 0;
+				transform: translateX(-100%);
+			  width: 100%;
+			  height: 100%;
+			  z-index: 50;
+			  // display: flex;
+			  // align-items: center;
+			  // justify-content: center;
+				padding: 25px 15px;
+			  background-color: $mainColor;
+			  overflow-y: auto;
+			  // opacity: 0;
+				transition: $mainTransition;
+				.menu-open & {
+					transform: translateX(0)
+				}
+		}
+	}
+
+	&__btn {
+		@include adaptiveValue("padding-top", 13, 6);
+		@include adaptiveValue("padding-right", 24, 13);
+		@include adaptiveValue("padding-bottom", 13, 6);
+		@include adaptiveValue("padding-left", 24, 13);
+		@include adaptiveValue("font-size", 16, 12);
+		@media (max-width: em(768)) {
+			  margin-right: rem(15);
+		}
+	}
+}
+
+
+
 
 //====================================================================================================
 
 // Анимация header scroll
 .header {
-	@media (min-width: 1025px) {
+	@media (min-width: 1025px) { 
 		transform: translateY(0);
 		position: fixed;
 		top: 0;
@@ -34,26 +147,25 @@
 //========================================================================================================================================================
 
 //Burger
-/*
 .icon-menu {
 	display: none;
-	@media (max-width: $mobile) {
+	@media (max-width: em(768)) {
 		display: block;
 		position: relative;
-		width: 30px;
-		height: 18px;
+		width: rem(23);
+		height: rem(18);
 		cursor: pointer;
 		z-index: 5;
 		span,
 		&::before,
 		&::after {
 			content: "";
-			transition: all 0.3s ease 0s;
+			transition: $mainTransition;
 			left: 0px;
 			position: absolute;
 			width: 100%;
 			height: 2px;
-			background-color: #000;
+			background-color: #fff;
 		}
 		&::before {
 			top: 0px;
@@ -79,4 +191,4 @@
 		}
 	}
 }
-*/
+
