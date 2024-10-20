@@ -127,7 +127,11 @@
 }
 //========================================================================================================================================================
 .info {
+	position: relative;
 	background-color: $darkColor;
+	&__wrapper {
+		background-size: cover !important;
+	}
 	&__box {
 		&:not(:last-child){
 			@include adaptiveValue("margin-bottom", 240, 30);
@@ -255,5 +259,8 @@
 		@include adaptiveValue("font-size", 18, 14);
 		font-weight: 500;
 		line-height: math.div(24, 18);
+		@media (min-width:em(1024)){
+			max-width: 70%;
+		}
 	}
 }
