@@ -153,4 +153,8 @@ body {
 		@include adaptiveValue("padding-top", 50, 25);
 		@include adaptiveValue("padding-bottom", 50, 25);
 	}
+	&__info {
+		@include adaptiveValue("padding-top", 120, 35);
+		@include adaptiveValue("padding-bottom", 120, 35);
+	}
 }
