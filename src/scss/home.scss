@@ -175,10 +175,9 @@
 			height: rem(16); 
 			margin-right: rem(16);
 			background-size: 100%; 
-			background-color: #CC000E;
 			background-position: center; 
 			background-repeat: no-repeat; 
-			
+			background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyMCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAgMEgxMEgxNUwyMCA0VjhWMTZIMTBINUwwIDEyVjhWMFoiIGZpbGw9IiNDQzAwMEUiLz4KPC9zdmc+Cg==');
 		}
 		&:not(:last-child){
 			margin-bottom: em(24, 24);

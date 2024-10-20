@@ -1,11 +1,12 @@
 //====================================================================================================
 .header {
-	position: relative;
-	z-index: 3;
-	@include adaptiveValue("padding-top", 12, 6);
-	@include adaptiveValue("padding-bottom", 12, 6);
+	min-height: rem(80);
 	background-color: $darkColor;
+	z-index: 1000;
 	&__wrapper {
+		@include adaptiveValue("padding-top", 12, 6);
+		@include adaptiveValue("padding-bottom", 12, 6);
+		background-color: $darkColor;
 	}
 
 	&__container {
@@ -122,32 +123,32 @@
 //====================================================================================================
 
 // Анимация header scroll
-// .header {
-// 	@media (min-width: 1025px) { 
-// 		transform: translateY(0);
-// 		position: fixed;
-// 		top: 0;
-// 		left: 0;
-// 		width: 100%;
-// 		transition: all 0.4s ease 0.1s;
-// 	}
-// 	&._header-scroll {
-// 		transform: translateY(-200%);
-// 		width: 100%;
-// 		background-color: #fff;
-// 		box-shadow: 0 0 rem(5) rgba(0, 0, 0, 0.5);
-// 	}
-// 	&._header-show {
-// 		top: 0%;
-// 		transform: translateY(0);
-// 	}
-// }
+.header__wrapper {
+	@media (min-width: 1025px) {
+		transform: translateY(0);
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		transition: all 0.4s ease 0.1s;
+	}
+}
+
+.header._header-scroll .header__wrapper {
+	transform: translateY(-200%);
+	width: 100%;
+	box-shadow: 0 0 rem(5) rgba(0, 0, 0, 0.5); 
+}
+.header._header-show .header__wrapper {
+	top: 0%;
+	transform: translateY(0);
+}
 
 // Убираем скачок при блокировке 
-.lock .header {
+.lock .header__wrapper {
 	@media (min-width:em(1025)){
 		left: auto;
-		right: rem(3.3);
+		right: 3px;
 	}
 }
 //========================================================================================================================================================

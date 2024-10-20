@@ -1,5 +1,7 @@
 // Заголовки, общие БЄМ блоки и проче...
 
+
+
 // Свойсьво Blur 
 .backdrop-filter {
 	background: rgba(255, 255, 255, 0.9);
@@ -8,4 +10,14 @@
 		background: rgba(255, 255, 255, 0.72);
 		backdrop-filter: blur(31);
 	}
+}
+// Стилизация скролла сайта ==============================================================================================================================
+::-webkit-scrollbar {
+	overflow-y: scroll;
+	width: rem(7);
+	background-color: #f9f9fd;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: grey;
 }
