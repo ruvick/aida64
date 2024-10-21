@@ -456,19 +456,32 @@ export function tabs() {
 // Модуь работы с меню (бургер) =======================================================================================================================================================================================================================
 export function menuInit() {
 	let iconMenu = document.querySelector(".icon-menu");
+	let mobMenu = document.querySelector(".actions-header__menu");
+
 	if (iconMenu) {
-		iconMenu.addEventListener("click", function (e) {
-			if (bodyLockStatus) {
-				bodyLockToggle();
-				document.documentElement.classList.toggle("menu-open");
+			iconMenu.addEventListener("click", function (e) {
+					if (bodyLockStatus) {
+							bodyLockToggle();
+							document.documentElement.classList.toggle("menu-open");
+					}
+			});
+	}
+
+	// Закрытие меню при клике вне элемента с классом header__box
+	document.addEventListener("click", function (e) {
+			if (document.documentElement.classList.contains("menu-open")) {
+					if (!mobMenu.contains(e.target) && !iconMenu.contains(e.target)) {
+							menuClose();
+					}
 			}
-		});
-	};
+	});
 }
+
 export function menuOpen() {
 	bodyLock();
 	document.documentElement.classList.add("menu-open");
 }
+
 export function menuClose() {
 	bodyUnlock();
 	document.documentElement.classList.remove("menu-open");

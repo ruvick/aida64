@@ -1,5 +1,4 @@
 .banner {
-	background-size: cover !important;
 	&__container {
 	}
 
@@ -134,7 +133,6 @@
 	position: relative;
 	background-color: $darkColor;
 	&__wrapper {
-		background-size: cover !important;
 	}
 	&__box {
 		&:not(:last-child){
@@ -163,6 +161,9 @@
 	}
 
 	&__descp {
+		@media (max-width: em(540)){
+			  text-align: center;
+		}
 	}
 
 	&__title {
@@ -176,7 +177,7 @@
 			float: left; 
 			flex: 0 0 rem(20); 
 			height: rem(16); 
-			margin-right: rem(16);
+			@include adaptiveValue("margin-right", 16, 8);
 			background-size: 100%; 
 			background-position: center; 
 			background-repeat: no-repeat; 
