@@ -1,6 +1,50 @@
 // Заголовки, общие БЄМ блоки и проче...
 
+//========================================================================================================================================================
 
+// Preloader
+.preloader {
+	height: 100%;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 6000;
+	background-color: #1f1d21;
+	width: 100%;
+	transition: 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+.preloader--end {
+	width: 0;
+}
+.preloader.is-hidden {
+	display: none;
+}
+.preloader__logo {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	transition: 0.3s;
+}
+
+.preloader__status {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 24.44444vh;
+	line-height: 24.44444vh;
+	letter-spacing: -0.55556vh;
+	color: #fff;
+	opacity: 0.03;
+	transition: 0.3s;
+}
+.preloader--end .preloader__logo, .preloader--end .preloader__status {
+	opacity: 0;
+}
+//========================================================================================================================================================
 
 // Свойсьво Blur 
 .backdrop-filter {

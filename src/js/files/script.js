@@ -1,5 +1,5 @@
 // Импорт функционала ==============================================================================================================================================================================================================================================================================================================================
-// import { isMobile } from "./functions.js";
+import { isMobile, bodyUnlock, bodyLock } from "./functions.js";
 // import { formsModules } from "./forms/forms.js";
 
  // Получаем элементы
@@ -30,3 +30,25 @@
 
  // Начинаем наблюдение за изменениями размеров
  resizeObserver.observe(headerWrapper);
+ //========================================================================================================================================================
+ 
+//  Preloader
+ const preloader = document.querySelector(".preloader");
+ const $preloaderNum = document.querySelector(".preloader__status-number");
+ let preloaderTimeoutDuration = 20;
+ let preloaderPercent = 0;
+
+ function updatePreloader() {
+		 if (preloaderPercent < 100) {
+				 preloaderPercent += 1;
+				 $preloaderNum.innerHTML = preloaderPercent; 
+				 setTimeout(updatePreloader, preloaderTimeoutDuration);
+		 } else {
+				 preloader.classList.add("preloader--end");
+				 setTimeout(() => {
+						 preloader.classList.add("is-hidden");
+				 }, 800);
+		 }
+ }
+
+ updatePreloader();

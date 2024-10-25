@@ -7,6 +7,7 @@
 		@include adaptiveValue("padding-top", 12, 6);
 		@include adaptiveValue("padding-bottom", 12, 6);
 		background-color: $darkColor;
+		box-shadow: 0 0 .8125rem rgba(0, 0, 0, .5);
 	}
 
 	&__container {
