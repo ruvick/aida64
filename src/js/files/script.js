@@ -50,5 +50,18 @@ import { isMobile, bodyUnlock, bodyLock } from "./functions.js";
 				 }, 800);
 		 }
  }
-
  updatePreloader();
+ //========================================================================================================================================================
+ 
+ if (!isMobile.any()) {
+	const videoContainer = document.querySelector('.info__box');
+	const video = document.querySelector('.info__video');
+
+	videoContainer.addEventListener('mouseenter', () => {
+			video.play();
+	});
+
+	videoContainer.addEventListener('mouseleave', () => {
+			video.pause();
+	});
+}
