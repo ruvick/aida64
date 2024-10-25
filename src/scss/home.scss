@@ -131,7 +131,7 @@
 //========================================================================================================================================================
 .info {
 	position: relative;
-	background-color: $darkColor;
+	background-color: $darkColor !important;
 	&__wrapper {
 	}
 	&__box {
