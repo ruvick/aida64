@@ -25,6 +25,10 @@
 			height: 100%;
 			object-fit: cover;
 		}
+		@media (min-width:em(1025)){
+			opacity: 0; 
+			transform: translateX(rem(-50)); 
+		}
 	}
 
 	&__actions {
@@ -52,6 +56,10 @@
 
 	&__item {
 			@include adaptiveValue("margin-left", 40, 10);
+			@media (min-width:em(1025)){
+				opacity: 0; 
+				transform: translateX(rem(-50)); 
+			}
 			@media (max-width: em(768)){
 				width: 100%;
 				margin: 0 0 rem(10) 0;
@@ -114,11 +122,21 @@
 	}
 
 	&__btn {
+		transition: 0s;
 		@include adaptiveValue("padding-top", 13, 5);
 		@include adaptiveValue("padding-right", 24, 10);
 		@include adaptiveValue("padding-bottom", 13, 5);
 		@include adaptiveValue("padding-left", 24, 10);
 		@include adaptiveValue("font-size", 16, 12);
+		@media (any-hover: hover){
+			 &:hover { 
+			 opacity: 1; 
+			} 
+		}
+		@media (min-width:em(1025)){
+			opacity: 0; 
+			transform: translateX(rem(-50)); 
+		}
 		@media (max-width: em(768)) {
 			  margin-right: rem(15);
 		}

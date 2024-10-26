@@ -41,6 +41,9 @@
 			// @include adaptiveValue("margin-bottom", 16, 10);
 			margin-bottom: em(16, 98);
 		}
+		@media (min-width:em(1025)){
+			opacity: 0;
+		}
 	}
 
 	&__subtitle {
@@ -51,6 +54,9 @@
 		&:not(:last-child){
 			margin-bottom: em(36, 36);
 		}
+		@media (min-width:em(1025)){
+			opacity: 0;
+	}
 	}
 
 	&__text {
@@ -61,6 +67,9 @@
 		&:not(:last-child){
 			margin-bottom: em(36, 26);
 		}
+		@media (min-width:em(1025)){
+			opacity: 0;
+	}
 	}
 
 	&__actions {
@@ -77,6 +86,7 @@
 		color: #fff;
 		width: 100%;
 		background-color: #CC000E;
+		transition: 0s;
 		svg {
 			flex: 0 0 rem(24);
 			width: rem(24);
@@ -89,6 +99,9 @@
 		@media (max-width: em(414)){
 			  width: 100%;
 		}
+		@media (min-width:em(1025)){
+			opacity: 0;
+	}
 	}
 
 	&__footnote {
@@ -99,6 +112,9 @@
 		line-height: math.div(20, 14);
 		color: #8c7194;
 		text-align: center;
+		@media (min-width:em(1025)){
+			opacity: 0;
+		}
 	}
 }
 
@@ -114,6 +130,9 @@
 		@media (max-width: em(540)){
 			  text-align: center;
 		}
+		@media (min-width:em(1025)){
+			opacity: 0;
+		}
 	}
 
 	&__img-ibg {
@@ -122,6 +141,9 @@
 		overflow: hidden;
 		img {
 			top: rem(-50);
+			@media (min-width:em(1025)){
+				opacity: 0;
+			}
 			@media (max-width: em(768)){
 				  top: 0;
 			}
