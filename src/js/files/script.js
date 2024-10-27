@@ -1,6 +1,8 @@
 // Импорт функционала ==============================================================================================================================================================================================================================================================================================================================
 import { isMobile, bodyUnlock, bodyLock } from "./functions.js";
 // import { formsModules } from "./forms/forms.js";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 
  // Получаем элементы
  const headerWrapper = document.querySelector('.header__wrapper');
@@ -68,10 +70,9 @@ if (preloader && $preloaderNum) {
 			video.pause();
 	});
 }
-
 //========================================================================================================================================================
 
-import { gsap } from "gsap";
+// Gsap animations
 
 // Анимация шапки
 function animateHeader() {
@@ -134,16 +135,68 @@ function animateBanner() {
 // Основная функция для запуска анимаций
 function startAnimation() {
 	if (window.innerWidth > 1024) {
-			animateHeader(); // Сначала анимируем шапку
-			// Запускаем анимацию баннера после завершения анимации шапки
-			gsap.delayedCall(2.3, animateBanner); // Задержка на время анимации шапки
+			animateHeader(); 
+			gsap.delayedCall(2.3, animateBanner); 
 	}
 }
 
-// Проверка при загрузке страницы
 window.addEventListener('load', function() {
-	setTimeout(startAnimation, 2300); // Запускаем startAnimation через 2 секунды
+	setTimeout(startAnimation, 2300); 
+});
+//========================================================================================================================================================
+
+gsap.registerPlugin(ScrollTrigger);
+
+const videoIbg = document.querySelector('.info__video-ibg');
+const descp = document.querySelector('.info__descp');
+
+if (window.innerWidth > 1024) {
+// Определяем анимацию
+const tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.info__box',
+    start: 'top bottom', 
+    end: 'bottom top', 
+    scrub: true 
+  }
 });
 
-// Проверка при изменении размера окна
-// window.addEventListener('resize', startAnimation);
+// Добавляем анимации в таймлайн
+tl.fromTo(videoIbg, 
+  { x: '-100%', opacity: 0 },
+  { x: '0%', opacity: 1, duration: 1 } 
+)
+.fromTo(descp, 
+  { x: '100%', opacity: 0 }, 
+  { x: '0%', opacity: 1, duration: 1 }, 
+  '<' 
+);
+}
+//========================================================================================================================================================
+
+const items = document.querySelectorAll('.item-advanced');
+
+if (window.innerWidth > 1024) {
+
+items.forEach((item, index) => {
+  // Определяем направление появления в зависимости от индекса
+  const direction = index % 2 === 0 ? '100%' : '-100%'; // Чётные справа, нечётные слева
+
+  gsap.fromTo(item, 
+    { x: direction, opacity: 0 }, 
+    { 
+      x: '0%', 
+      opacity: 1, 
+      duration: 1.5, 
+      scrollTrigger: {
+        trigger: '.advanced-info__inner',
+        start: 'top bottom', 
+        end: 'bottom top', 
+        scrub: false,
+        stagger: 0.2, 
+        toggleActions: 'play none none reverse' 
+      }
+    }
+  );
+});
+}
