@@ -110,7 +110,8 @@ function animateBanner() {
 	const subtitle = document.querySelector('.descp-banner__subtitle');
 	const text = document.querySelector('.descp-banner__text');
 	const btn = document.querySelector('.descp-banner__btn');
-	const footnote = document.querySelector('.descp-banner__footnote');
+	const footnote = document.querySelector('.descp-banner__footnote'); 
+	const bannerText = document.querySelector('.image-banner__text');
 	const image = document.querySelector('.image-banner__img-ibg img');
 
 	// Анимация заголовка
@@ -128,8 +129,11 @@ function animateBanner() {
 	// Анимация доп.текста
 	gsap.fromTo(footnote, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.5, delay: 2 });
 
+	// Анимация доп.текста
+	gsap.fromTo(bannerText, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.5, delay: 2.5 });
+
 	// Анимация изображения
-	gsap.fromTo(image, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.5, delay: 2.5 });
+	gsap.fromTo(image, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.5, delay: 3 });
 }
 
 // Основная функция для запуска анимаций
@@ -200,3 +204,5 @@ items.forEach((item, index) => {
   );
 });
 }
+//========================================================================================================================================================
+

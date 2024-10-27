@@ -13,6 +13,7 @@
 	color: $darkColor;
 	background: $mainColor;
 	transition: $mainTransition;
+	transition: opacity 0.4s ease 0s;
 
 	@media (any-hover: hover) {
 		&:hover {
